@@ -24,10 +24,16 @@ $(document).ready(function() {
 		$('#myMessage').val('');
 	});
 
+	$('#imgbutton').on('click', function () {
+	    socket.emit('image', $('#myMessage').val());
+		$('#myMessage').val('');
+	});
+
 });
 </script>
 <ul id="messages"></ul>
 <input type="text" id="myMessage">
 <button id="sendbutton">Send</button>
+<button id="imgbutton">Image</button>
 </body>
 </html>
