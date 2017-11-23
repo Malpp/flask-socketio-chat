@@ -5,6 +5,11 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecret'
 socketio = SocketIO(app)
 
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+    
+
 @socketio.on('message')
 def handleMessage(msg):
 	print('Message: ' + msg)
